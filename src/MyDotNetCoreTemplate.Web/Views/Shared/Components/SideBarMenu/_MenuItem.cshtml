@@ -1,0 +1,62 @@
+﻿@using MyDotNetCoreTemplate.Web.Views.Shared.Components.SideBarMenu
+@model UserMenuItem
+@{ 
+    var isActive = IsActiveMenuItem(Model, ViewBag.CurrentRoutePath);
+    var subMenus = Model.Items?.Where(x => x.IsVisible).OrderByCustom().ToList();
+    var hasSubMenus = subMenus != null && subMenus.Any(); 
+}
+@functions
+{ 
+    static bool IsActiveMenuItem(UserMenuItem menuItem, string url)
+    {
+        if (string.IsNullOrWhiteSpace(url))
+            return false;
+
+        menuItem.Url ??= "";
+        return url.Equals(menuItem.Url, StringComparison.InvariantCultureIgnoreCase)
+        || (menuItem.Items != null && menuItem.Items.Any(cn => IsActiveMenuItem(cn, url)));
+    }
+}
+@if (!hasSubMenus)
+{
+    var linkClasses = $"nav-link {(isActive ? "active" : null)}";
+    var linkTarget = !string.IsNullOrEmpty(Model.Target) ? Html.Raw($" target=\"{Model.Target}\"") : null;
+
+    <li class="nav-item">
+        <a href="@Model.Url" class="@linkClasses" @linkTarget>
+            @if (!string.IsNullOrEmpty(Model.Icon))
+            {
+                 <i class="nav-icon @Url.Content(Model.Icon)"></i>
+            }
+            <p>@Model.Name</p>
+        </a>
+    </li> 
+}
+else
+{
+    var navitemClasses = $"nav-item {(hasSubMenus ? "has-treeview" : "")} {(isActive ? "menu-open" : "")}";
+    navitemClasses = !string.IsNullOrEmpty(navitemClasses?.Trim()) ? navitemClasses : null;
+    var linkClasses = $"nav-link {(isActive ? "active" : null)}";
+
+    <li class="@navitemClasses">
+        <a href="javascript:;" class="@linkClasses">
+            @if (!string.IsNullOrEmpty(Model.Icon))
+            { 
+                <i class="nav-icon @Url.Content(Model.Icon)"></i>
+            }
+            <p>
+                @Model.Name
+                <i class="fas fa-angle-left right"></i>
+            </p>
+        </a>
+        @if (hasSubMenus)
+        {
+            <ul class="nav nav-treeview">
+            @foreach (var subMenu in subMenus)
+            {
+                @await Html.PartialAsync("Components/SideBarMenu/_MenuItem", subMenu)
+            }
+            </ul>
+         }
+    </li>
+}

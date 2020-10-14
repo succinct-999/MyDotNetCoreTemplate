@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30320.27
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyDotNetCoreTemplate.Web", "src\MyDotNetCoreTemplate.Web\MyDotNetCoreTemplate.Web.csproj", "{52E0A298-19B6-45FC-A5FB-FB4BEE67FEEE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B80D4940-B40D-42FE-891E-EE7F6E404CCB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DFB6622C-2E42-4AE7-8878-D4BD78EBFD72}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{A81302D3-1955-4BEE-AFF7-14AF76010E2E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests", "tests\UnitTests\UnitTests.csproj", "{55D0A1A6-B374-4272-A070-945BF3C42EE4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyDotNetCoreTemplate.Core", "src\MyDotNetCoreTemplate.Core\MyDotNetCoreTemplate.Core.csproj", "{724F436D-9F91-45CB-B398-3C6C5AACC99E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyDotNetCoreTemplate.Infrastructure.csproj", "src\MyDotNetCoreTemplate.Infrastructure\MyDotNetCoreTemplate.Infrastructure.csproj", "{B621BFF3-5A4F-460F-AF39-8676E060ABE4}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{5811FD31-66AE-4E17-B044-5B813841238F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{52E0A298-19B6-45FC-A5FB-FB4BEE67FEEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52E0A298-19B6-45FC-A5FB-FB4BEE67FEEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52E0A298-19B6-45FC-A5FB-FB4BEE67FEEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52E0A298-19B6-45FC-A5FB-FB4BEE67FEEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55D0A1A6-B374-4272-A070-945BF3C42EE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55D0A1A6-B374-4272-A070-945BF3C42EE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55D0A1A6-B374-4272-A070-945BF3C42EE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55D0A1A6-B374-4272-A070-945BF3C42EE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{724F436D-9F91-45CB-B398-3C6C5AACC99E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{724F436D-9F91-45CB-B398-3C6C5AACC99E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{724F436D-9F91-45CB-B398-3C6C5AACC99E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{724F436D-9F91-45CB-B398-3C6C5AACC99E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B621BFF3-5A4F-460F-AF39-8676E060ABE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B621BFF3-5A4F-460F-AF39-8676E060ABE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B621BFF3-5A4F-460F-AF39-8676E060ABE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B621BFF3-5A4F-460F-AF39-8676E060ABE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5811FD31-66AE-4E17-B044-5B813841238F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5811FD31-66AE-4E17-B044-5B813841238F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5811FD31-66AE-4E17-B044-5B813841238F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5811FD31-66AE-4E17-B044-5B813841238F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{52E0A298-19B6-45FC-A5FB-FB4BEE67FEEE} = {B80D4940-B40D-42FE-891E-EE7F6E404CCB}
+		{55D0A1A6-B374-4272-A070-945BF3C42EE4} = {A81302D3-1955-4BEE-AFF7-14AF76010E2E}
+		{724F436D-9F91-45CB-B398-3C6C5AACC99E} = {B80D4940-B40D-42FE-891E-EE7F6E404CCB}
+		{B621BFF3-5A4F-460F-AF39-8676E060ABE4} = {B80D4940-B40D-42FE-891E-EE7F6E404CCB}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A552F848-4494-4F2B-88A4-32819589717D}
+	EndGlobalSection
+EndGlobal

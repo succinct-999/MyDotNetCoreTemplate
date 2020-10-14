@@ -1,0 +1,80 @@
+@page
+@model RegisterModel
+@{ 
+    ViewData["Title"] = "注册";
+}
+
+<div class="register-box">
+    <div class="register-logo">
+        <a href="/"><b>后台系统</b></a>
+    </div>
+
+    <div class="card">
+        <div class="card-body register-card-body">
+            <p class="login-box-msg">注册账号</p>
+
+            <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                <hr />
+                <div asp-validation-summary="All" class="text-danger"></div>
+
+                <div class="input-group mt-3">
+                    <input type="text" class="form-control" placeholder="@Html.DisplayNameFor(a => a.Input.UserName)" asp-for="Input.UserName">
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-user"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <span asp-validation-for="Input.UserName" class="text-danger"></span>
+                </div>
+
+                <div class="input-group mt-3">
+                    <input type="password" class="form-control" placeholder="@Html.DisplayNameFor(a => a.Input.Password)" asp-for="Input.Password">
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-lock"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+
+                <div class="input-group mt-3">
+                    <input type="password" class="form-control" placeholder="@Html.DisplayNameFor(a => a.Input.ConfirmPassword)" asp-for="Input.ConfirmPassword">
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-lock"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-8">
+
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-4">
+                        <button type="submit" class="btn btn-primary btn-block">注册</button>
+                    </div>
+                    <!-- /.col -->
+                </div>
+            </form>
+
+            <div class="social-auth-links text-center mb-3">
+            </div>
+
+            <a asp-page="./Login" class="text-center">已有账号</a>
+        </div>
+        <!-- /.form-box -->
+    </div><!-- /.card -->
+</div>
+<!-- /.register-box -->
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

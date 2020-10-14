@@ -1,0 +1,20 @@
+﻿@using MyDotNetCoreTemplate.Web.Views.Shared.Components.SideBarMenu
+@model SideBarMenuViewModel
+@{
+    var orderedMenuItems = Model.MainMenuItems.Where(x => x.IsVisible).OrderByCustom().ToList();
+}
+
+<!-- Sidebar Menu -->
+<nav class="mt-2">
+    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
+        @{
+            foreach (var item in orderedMenuItems)
+            {
+                @await Html.PartialAsync("Components/SideBarMenu/_MenuItem", item)
+            }
+        }
+    </ul>
+
+</nav>
+<!-- /.sidebar-menu -->
